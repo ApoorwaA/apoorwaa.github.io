@@ -46,12 +46,14 @@
           <!--<li><a href="courses.html">Courses</a></li>
           <li><a href="trainers.html">Trainers</a></li>
           <li><a href="events.html">Events</a></li> -->
-          <li class="demhead"><a href="dementia.html"><b>Dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
+          <li class="demhead"><a href="dementia.html"><b>Living with Dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
           <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Savings</a></li>
               <li><a href="#">Credit Card</a></li>
-              <li><a href="#">Personal Loan</a></li>
+              <li><a href="#">Loans</a></li>
+              <li><a href="#">Insurance</a></li>
+              <li><a href="#">Investments</a></li>
               <li><a href="#"><b>Dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
             </ul>
           </li>
@@ -103,15 +105,65 @@
           </div>
 
           <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+            <h3>Living with Dementia?</h3>
+            <p class="mt-3">
+              We're proud to have worked in partnership with Alzheimer's Society. 
+              Together we've built stronger, dementia-friendly communities and are making 
+              <strong>FIN BANK</strong> a dementia-friendly business
+              We want our customers to be able to bank in the way that makes them most comfortable. That's why many of our staff are Dementia Friends, meaning they're trained to support those impacted by dementia.
             </p>
+            <h1>
+              Helpful ways to manage your finances
+            </h1>
+            <p class="A-PAR16R-RW-ALL">For help with your finances view our <u> guide</a></u> and FAQs below.<br> </p>
+        
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                  <style>
+        .info {
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .clickable {
+            cursor: pointer;
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!--to change event on click chetan--> 
+    <div class="clickable" onclick="toggleInfo()"> <li><i class="bi bi-check-circle"></i> <span>Contactless Payments</span></li></div>
+    <div class="info" id="info">
+        <p>Need to provide detail information from Yogesh B</p>
+        <p>Need to provide detail information from Yogesh B</p>
+     </div>
+    
+     <div class="clickable" onclick="toggleInfo()"> <li><i class="bi bi-check-circle"></i> <span>Controlling Spendings</span></li></div>
+    <div class="info" id="info">
+        <p>Need to provide detail information </p>
+        <p>Need to provide detail information </p>
+     </div> 
+    
+    <script>
+        function toggleInfo() {
+            const info = document.getElementById('info');
+            if (info.style.display === 'none' || info.style.display === '') {
+                info.style.display = 'block';
+            } else {
+                info.style.display = 'none';
+            }
+        }
+    </script>
+
+              <li><i class="bi bi-check-circle"></i> <span>Controlling Spendings</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Free Services</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>One Call away</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Automated Bill Payments</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Doorstep Services</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Cardless Transaction</span></li>
             </ul>
           </div>
 
