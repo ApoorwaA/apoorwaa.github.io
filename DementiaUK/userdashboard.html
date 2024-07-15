@@ -42,24 +42,96 @@
   </a>
     
   <nav id="navmenu" class="navmenu">
-    <ul>
-      <li><a href="index.html" class="active">Home<br></a></li>
-      <li class="demhead"><a href="dementia.html"><b> Living with dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
-              <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Savings</a></li>
-                  <li><a href="#">Credit Card</a></li>
-                  <li><a href="#">Loans</a></li>
-                  <li><a href="#">Insurance</a></li>
-                  <li><a href="#">Investments</a></li>
-                  <li><a href="#"><b>Dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
-                </ul>
-      </li>
+    <!-- changes by chetan <ul>
       <li><a href="contact.html">Contact Us</a></li>
       <li><b>Logged in as : <span id="loggedinuser"></span></b></li>
-    </ul>
+    </ul> -->
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
   </nav>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .header {
+        background-color: #333;
+        padding: 15px 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    .header a:hover {
+        text-decoration: underline;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #575757;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="logo">
+    <a href="#home">Forget Bill Payment?</a>
+</div>
+<div class="nav-links">
+    <a href="#dashboard">Dementia Services</a>
+    <a href="#services">GenServices</a>
+    <a href="#support">Support</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+<div class="dropdown">
+    <button class="dropbtn">Account &#9662;</button>
+    <div class="dropdown-content">
+        <a href="#profile">Profile</a>
+        <a href="#settings">Settings</a>
+        <a href="#logout">Logout</a>
+    </div>
+</div>
+</div>
 
     
 </div>
