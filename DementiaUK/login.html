@@ -75,27 +75,36 @@
         .switch-form a:hover { 
             text-decoration: underline; 
         } 
+        .btn-learnmore {
+          color: var(--contrast-color);
+          background: var(--accent-color);
+          font-size: 14px;
+          padding: 8px 25px;
+          margin: 0 0 0 30px;
+          border-radius: 50px;
+          transition: 0.3s;
+        }
         </style>
 </head>
 
 <body class="courses-page">
-    <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center sticky-top">
+<div class="container-fluid container-xl position-relative d-flex align-items-center">
     
-          <a href="index.html" class="logo d-flex align-items-center me-auto">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/F-logo.jpg" alt=""> -->
-            <h1 class="sitename">FIN Bank</h1>
-          </a>
+  <a href="index.html" class="logo d-flex align-items-center me-auto">
+    <!-- Uncomment the line below if you also wish to use an image logo -->
+    <!-- <img src="assets/img/F-logo.jpg" alt=""> -->
+    <h1 class="sitename">FIN Bank</h1>
+  </a>
     
-          <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a href="index.html" class="active">Home<br></a></li>
-              <li><a href="about.html">About</a></li>
-              <!--<li><a href="courses.html">Courses</a></li>
-              <li><a href="trainers.html">Trainers</a></li>
-              <li><a href="events.html">Events</a></li> -->
-              <li class="demhead"><a href="dementia.html"><b> Living with dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="index.html" class="active">Home<br></a></li>
+      <li><a href="about.html">About</a></li>
+      <!--<li><a href="courses.html">Courses</a></li>
+      <li><a href="trainers.html">Trainers</a></li>
+      <li><a href="events.html">Events</a></li> -->
+      <li class="demhead"><a href="dementia.html"><b> Living with dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
               <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Savings</a></li>
@@ -105,73 +114,122 @@
                   <li><a href="#">Investments</a></li>
                   <li><a href="#"><b>Dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
                 </ul>
-              </li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+  </nav>
     
-          <a class="btn-getstarted" href="login.html">Get Started</a>
+  <a class="btn-getstarted" href="login.html">Get Started</a>
     
-        </div>
-      </header>  <main class="main">
-    <div class="container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="logins">
-              <button class="nav-link active" id="user-login-form-tab" data-bs-toggle="tab" data-bs-target="#user-login-form" type="button" role="tab" aria-controls="user-login-form" aria-selected="true">User Login</button>
-            </li>
-            <li class="nav-item" role="logins">
-              <button class="nav-link" id="carer-login-form-tab" data-bs-toggle="tab" data-bs-target="#carer-login-form" type="button" role="tab" aria-controls="carer-login-form" aria-selected="false">Carer Login</button>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-           <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>-->
-           
-        <div id="user-login-form" class="tab-pane fade show active" role="tabpanel" aria-labelledby="user-login-form-tab"> 
-            <h2>User Login</h2> 
-            <form action="/login" method="POST"> 
-                <div class="form-group"> 
-                    <label for="login-email">User Name</label> 
-                    <input type="email" id="login-email" name="email" required> 
-                </div> 
-                <div class="form-group"> <label for="login-password">Password</label> 
-                <input type="password" id="login-password" name="password" required> 
-                </div> 
-                <div class="form-group"> 
-                    <button type="submit">Login</button> 
-                </div> 
-                <div class="switch-form"> 
-                    <p>Don't have Online Banking?  
-                        <a href="#" onclick="switchForm()">Sign Up</a>
-                    </p> 
-                </div> 
-            </form> 
-        </div> 
-        <div id="carer-login-form" class="tab-pane fade" role="tabpanel" aria-labelledby="carer-login-form-tab"> 
-            <h2>Carer Login</h2> 
-            <form action="/login" method="POST"> 
-                <div class="form-group"> 
-                    <label for="login-email">User Name</label> 
-                    <input type="email" id="login-email" name="email" required> 
-                </div> 
-                <div class="form-group"> <label for="login-password">Password</label> 
-                <input type="password" id="login-password" name="password" required> 
-                </div> 
-                <div class="form-group"> 
-                    <button type="submit">Login</button> 
-                </div> 
-                <div class="switch-form"> 
-                    <p>Don't have an account? 
-                        <a href="#" onclick="switchForm()">Sign Up</a>
-                        </p> 
-                </div> 
-            </form> 
-        </div>
-    </div> 
+</div>
+</header>  
+<!--<main class="main">-->
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 text-center">
+      <span>
+          <h1><b>Forgot to pay your bills ?</b></h1>
+          <h1><b>Missing monthly payments ?</b></h1>
+          <p>
+            <br>Take our survey to see if you are too suffering from Dementia !<br>
+            <br>
+            <a class="btn-learnmore" href="login.html">Learn More</a>
+        </p>
+      </span>
     </div>
-  </main>
+  <div class="col-md-6 text-center" style="border-radius: 5px; border: 2px solid seagreen ">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="logins">
+      <button class="nav-link active" id="user-login-form-tab" data-bs-toggle="tab" data-bs-target="#user-login-form" type="button" role="tab" aria-controls="user-login-form" aria-selected="true">User Login</button>
+    </li>
+    <li class="nav-item" role="logins">
+      <button class="nav-link" id="carer-login-form-tab" data-bs-toggle="tab" data-bs-target="#carer-login-form" type="button" role="tab" aria-controls="carer-login-form" aria-selected="false">Carer Login</button>
+    </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div id="user-login-form" class="tab-pane fade show active" role="tabpanel" aria-labelledby="user-login-form-tab"> 
+        <h2>Login</h2> 
+        <form id="loginForm" action="userdashboard.html" method="GET"> 
+            <div class="form-group"> 
+              <label for="username">User Name</label> 
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required> 
+            </div> 
+            <div class="form-group"> 
+              <label for="login-password">Password</label> 
+            <input type="password" id="password" name="password" placeholder="Enter password" required> 
+            </div> 
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <div class="switch-form"> 
+                <p>Don't have an account? 
+                    <a href="#" onclick="switchFormUser()">Sign Up</a>
+                </p> 
+            </div> 
+        </form> 
+      </div> 
+      <div id="carer-login-form" class="tab-pane fade" role="tabpanel" aria-labelledby="carer-login-form-tab"> 
+          <h2>Login</h2> 
+          <form id="loginForm" action="carerdashboard.html" method="GET"> 
+            <div class="form-group"> 
+              <label for="username">User Name</label> 
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required> 
+            </div> 
+            <div class="form-group"> 
+              <label for="login-password">Password</label> 
+            <input type="password" id="password" name="password" placeholder="Enter password" required> 
+            </div> 
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <div class="switch-form"> 
+                <p>Don't have an account? 
+                    <a href="#" onclick="switchFormUser()">Sign Up</a>
+                </p> 
+            </div> 
+        </form>
+      </div>
+      <!-- User Sign-Up Form --> 
+      <!--<div id="user-signup-form" style="display: none;"> 
+        <h2>Sign Up</h2> 
+        <form action="/signup" method="POST"> 
+            <div class="form-group"> 
+                <label for="signup-email">Email</label> 
+                <input type="email" id="signup-email" name="email" required> 
+            </div> 
+            <div class="form-group"> 
+                <label for="signup-password">Password</label> 
+                <input type="password" id="signup-password" name="password" required> 
+            </div> 
+            <div class="form-group"> 
+                <button type="submit">Sign Up</button> 
+            </div> 
+            <div class="switch-form"> 
+                <p>Already have an account? <a href="#" onclick="switchFormUser()">Login</a></p> 
+            </div> 
+        </form> 
+      </div> 
+      <div id="carer-signup-form" style="display: none;"> 
+        <h2>Sign Up</h2> 
+        <form action="/signup" method="POST"> 
+            <div class="form-group"> 
+                <label for="signup-email">Email</label> 
+                <input type="email" id="signup-email" name="email" required> 
+            </div> 
+            <div class="form-group"> 
+                <label for="signup-password">Password</label> 
+                <input type="password" id="signup-password" name="password" required> 
+            </div> 
+            <div class="form-group"> 
+                <button type="submit">Sign Up</button> 
+            </div> 
+            <div class="switch-form"> 
+                <p>Already have an account? <a href="#" onclick="switchFormCarer()">Login</a></p> 
+            </div> 
+        </form> 
+      </div>-->
+    </div> 
+  </div>
+</div>
+  </div>
+  <!--</main>-->
 
   <footer id="footer" class="footer position-relative light-background">
 
@@ -260,7 +318,42 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script> 
+    function switchFormUser() { 
+        const userloginForm = document.getElementById('user-login-form'); 
+        const usersignupForm = document.getElementById('user-signup-form'); 
+        if (userloginForm.style.display === 'none') { 
+          userloginForm.style.display = 'block'; 
+          usersignupForm.style.display = 'none'; 
+        } else { 
+          userloginForm.style.display = 'none'; 
+          usersignupForm.style.display = 'block'; 
+        } 
+    } 
+    function switchFormCarer() {  
+        const carerloginForm = document.getElementById('carer-login-form'); 
+        const carersignupForm = document.getElementById('carer-signup-form'); 
+        if (carerloginForm.style.display === 'none') { 
+          carerloginForm.style.display = 'block'; 
+          carersignupForm.style.display = 'none'; 
+        } else { 
+          carerloginForm.style.display = 'none'; 
+          carersignupForm.style.display = 'block'; 
+        } 
+    } 
+    function redirectToNewPage(event) {
+      event.preventDefault(); // Prevent the form from submitting
 
+      // Get values from form inputs
+      var username = document.getElementById('login-user').value;
+      var password = document.getElementById('password').value;
+
+      // Your logic to validate username and password (not included in this example)
+
+      // Redirect to a new page (replace 'newpage.html' with your actual URL)
+      window.location.href = 'userdashboard.html';
+    }
+    </script> 
 </body>
 
 </html>
