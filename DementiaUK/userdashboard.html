@@ -54,11 +54,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
-    }
-    .container {
-      background-color: ivory;
-      padding: 10px;
+        background-color: seagreen;
     }
     .header {
         background-color: #333;
@@ -121,6 +117,12 @@
       max-width: 200px; /* Adjust the maximum width as needed */
       margin: 0 auto; /* Center the chart horizontally */
     }
+    .scrollable-div {
+      height: 300px; /* Set height as needed */
+      overflow: auto; /* Enable scrolling */
+      border: 1px solid #ccc; /* Optional border for visual clarity */
+      padding: 10px; /* Optional padding inside the div */
+}
 </style>
 </head>
 <body>
@@ -149,9 +151,10 @@
 </div>
 </header>  
 <!--<main class="main">-->
+  <br>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-3" style="border-radius: 3px; border: 2px solid seagreen;">
+      <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;" >
         <div class="services">
           <br>
           <h5 style="text-align: center;"><strong>Services</strong></h5><br>
@@ -160,12 +163,14 @@
             <li>Cash Pick-up</li><br>
             <li>Cheque Pick-up</li><br>
             <li>Export tracking Data</li><br>
-            <li>Upload Proofs</li>
+            <li>Upload Proofs</li><br>
+            <li>Detailed Account Summary</li>
           </ul>
         </div>
       </div>
-      <div class="col-md-6" style="border-radius: 3px; border: 2px solid seagreen; ">
-        <h5>Hi, <strong><u><span id="loggedinuser"></span></u></strong></h5>
+      <br>
+      <div class="col-md-6" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <h5>Hi, <strong><u><span id="loggedinuser"></span></u></strong></h5><br>
         <div class="row">
         <div class="col-md-6">
           <h4><strong>Account Summary</strong></h4>
@@ -177,22 +182,9 @@
         </div>
         </div>
         <br><br>
-        <div class="row" style="border-radius: 3px; border: 2px solid seagreen; ">
-          <div class="col-md-3 text-center">
-            <h6>Quick Transfer</h6>
-          </div>
-          <div class="col-md-3 text-center">
-            <h6>Bill Payments</h6>
-          </div>
-          <div class="col-md-3 text-center">
-            <h6>Manage Limits</h6>
-          </div>
-          <div class="col-md-3 text-center">
-            <h6>Schedule Payment</h6>
-          </div>
-        </div>
+        
       </div>
-      <div class="col-md-3" style="border-radius: 3px; border: 2px solid seagreen ">
+      <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
         <br>
         <h5 class="card-title text-center"><strong>Payments Due<sup style="color: red;"><strong>!!</strong></sup></strong></h5><br>
         <div class="row" >
@@ -205,39 +197,123 @@
         <div class="row" >
           <div class="col-md-12 text-align" style="font-size: 13px;">
             <span>Electricity Bill - €300 
-              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#exampleModal" style="font-size: 13px;">Pay</button>
+              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#example2Modal" style="font-size: 13px;">Pay</button>
             </span>
           </div>
         </div>
       </div>
     </div>
     <br>
-    <div class="row" style="border-radius: 5px; border: 2px solid seagreen ">
-      <div class="col-md-3" style="border-radius: 3px; border: 2px solid seagreen ">
+    <div class="row">
+      <div class="col-md-3 scrollable-div" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
         <br>
         <h5 class="card-title text-center"><strong>Recent Transactions</strong></h5><br>
         <div class="row" >
-          <div class="col-md-12 text-align" style="font-size: 13px;">
-            <span>Transfer to 768374638 Dr - €25 
-            </span>
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>xyz company</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€15</span>
           </div>
         </div>
+        <br>
         <div class="row" >
-          <div class="col-md-12 text-align" style="font-size: 13px;">
-            <span>Deposit - €1000 
-            </span>
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>online goods</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€38</span>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <h4>My Offers !</h4>
-      </div>
-      <div class="col-md-3">
-        <h4>My Offers !</h4>
-      </div>
-        <div class="col-md-3">
-          <h4>My Offers !</h4>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment recieved from<br><strong>Marcus/34556/2466</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: green">+€400</span>
+          </div>
         </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>food company</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€20</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment recieved from<br><strong>Salary/08e3459356324/12</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: green">+€1200</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>groceries</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€35</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>Alexa</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€40</span>
+          </div>
+        </div>
+        <br>
+      </div>
+      <style>
+        .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        grid-gap: 10px; /* Gap between grid items */
+        border: 1px solid #ccc; /* Border for visualization */
+        padding: 10px; /* Padding for spacing */
+  }
+.inner-grid {
+  padding: 20px;
+}
+      </style>
+      <div class="col-md-3 grid" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <div class="col-md-6 text-center inner-grid">
+          <h6 style="text-align: center;"><strong>Quick Transfer</strong></h6>
+          <img src="assets/img/quick.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+        <div class="col-md-6 text-center  inner-grid">
+          <h6 style="text-align: center;"><strong>Manage Limits</strong></h6>
+          <img src="assets/img/manlimits.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+      </div>
+      <div class="col-md-3 grid" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <div class="col-md-6 text-center inner-grid">
+          <h6 style="text-align: center;"><strong>Bill Payments</strong></h6>
+          <img src="assets/img/billpay.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+        <div class="col-md-6 text-center inner-grid">
+          <h6 style="text-align: center; "><strong>Schedule Payments</strong></h6>
+          <img src="assets/img/SchdPymt.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+      </div>
+      <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <br>
+        <h4><strong>My Offers !</strong></h4><br>
+          <p  style="border: 1px solid ;">Eligible for higher interest rates on deposits.
+            <a href="#" class="more-btn"><span>Know More</span> <i class="bi bi-chevron-right"></i></a>
+          </p>
+          <p  style="border: 1px solid ;">Pre-approved Medical loan
+            <a href="#" class="more-btn"><span>Know More</span> <i class="bi bi-chevron-right"></i></a>
+          </p>
+      </div>
     </div>
   </div>
   <br>
@@ -248,7 +324,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Scheduled Payment</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Make Payment</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -258,9 +334,32 @@
           <p><strong>Debit from</strong> : 1234567</p>
           <p><strong>Payment Amount</strong> : €200</p>
         </div>
+        <p id="paid" hidden style="color: green;"><strong>Payment made successfully !</strong></p>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Pay Now</button>
+          <button type="button" class="btn btn-primary" id="paynow">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="example2ModalLabel">Make Payment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="color: red;">Auto debit scheduled for 21<sup>st</sup>. Click Below to pay now.</p>
+          <p><strong>Debit from</strong> : 1234567</p>
+          <p><strong>Payment Amount</strong> : €300</p>
+        </div>
+        <p id="paid2" hidden style="color: green;"><strong>Payment made successfully !</strong></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="paynow2">Pay Now</button>
         </div>
       </div>
     </div>
@@ -313,6 +412,16 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script> 
+  document.getElementById('paynow').addEventListener('click', function() {
+    // Display the message
+    document.getElementById('paid').hidden = false;
+    document.getElementById('paynow').disabled=true;
+  });
+  document.getElementById('paynow2').addEventListener('click', function() {
+    // Display the message
+    document.getElementById('paid2').hidden = false;
+    document.getElementById('paynow2').disabled=true;
+  });
 function getUrlParameter(name) {
       name = name.replace(/[\[\]]/g, '\\$&');
       var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
