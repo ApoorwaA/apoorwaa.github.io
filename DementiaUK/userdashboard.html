@@ -341,6 +341,41 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="cashpick" tabindex="-1" role="dialog" aria-labelledby="cashpickLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cashpickLabel">Cash Pick up</h5>
+        </div>
+        <div class="modal-body">
+          <p><strong>Account Number</strong> : 1234567</p>
+          <p><strong>Amount</strong> : <input type="text" class="Amount" id="cashAmt2"></p>
+        </div>
+        <strong><p id="request2" style="color: green;"></p></strong>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="requestnow2">Request Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="chqrqst" tabindex="-1" role="dialog" aria-labelledby="chqrqstLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="chqrqstLabel">Cheque Pick-up</h5>
+        </div>
+        <div class="modal-body">
+          <p><strong>Place request for Cheque Pick-up</strong></p>
+          <button type="button" class="btn btn-primary" id="requestnow3">Request Now</button>
+        </div>
+        <strong><p id="request3" style="color: green;"></p></strong>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -453,6 +488,21 @@
       document.getElementById('request').innerHTML = 'Request Submitted. A bank representative will reach out to you.';
       document.getElementById('requestnow').disabled=true;
     }
+  });
+  document.getElementById('requestnow2').addEventListener('click', function() {
+    // Display the message
+    if(document.getElementById('cashAmt2').value === '') {
+      document.getElementById('request2').innerHTML = 'Amount cannot be empty';
+    }
+    else {
+      document.getElementById('request2').innerHTML = 'Request Submitted. A bank representative will reach out to you.';
+      document.getElementById('requestnow2').disabled=true;
+    }
+  });
+  document.getElementById('requestnow3').addEventListener('click', function() {
+    // Display the message
+      document.getElementById('request3').innerHTML = 'Request Submitted. A bank representative will reach out to you.';
+      document.getElementById('requestnow3').disabled=true;
   });
 function getUrlParameter(name) {
       name = name.replace(/[\[\]]/g, '\\$&');
