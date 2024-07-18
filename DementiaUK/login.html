@@ -151,7 +151,7 @@
     <div class="tab-content" id="myTabContent">
       <div id="user-login-form" class="tab-pane fade show active" role="tabpanel" aria-labelledby="user-login-form-tab"> 
         <h2>Login</h2> 
-        <form id="loginForm" action="logindashboard.html" method="GET"> 
+        <form id="loginForm" onsubmit="return submitLogin()"> 
             <div class="form-group"> 
               <label for="username">User Name</label> 
               <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required> 
@@ -160,7 +160,8 @@
               <label for="login-password">Password</label> 
             <input type="password" id="password" name="password" placeholder="Enter password" required> 
             </div> 
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <p id="error" style="color: red;"></p>
+            <button type="submit" class="btn btn-primary btn-block" >Login</button>
             
             <div class="switch-form"> 
                 <p>Don't have an account? 
@@ -342,6 +343,30 @@
           carerloginForm.style.display = 'none'; 
           carersignupForm.style.display = 'block'; 
         } 
+    }
+    function submitLogin(){
+      //Apoorwa - normal
+      //Yogesh - carer
+      //Chetan - Dementia
+      event.preventDefault(); 
+      var user = document.getElementById('username').value;
+      if((user === 'Apoorwa') || (user === 'Yogesh') || (user === 'Chetan')) {
+        if(user === 'Apoorwa'){
+          window.location.href = 'logindashboard.html?username=' + encodeURIComponent(user);
+        }
+        if(user === 'Yogesh'){
+          window.location.href = 'carerdashboard.html?username=' + encodeURIComponent(user);
+        }
+        if(user === 'Chetan'){
+          window.location.href = 'userdashboard.html?username=' + encodeURIComponent(user);
+        }
+      }
+      else {
+        document.getElementById('error').innerText = 'User name is Invalid!';
+        return false;
+      }
+      return true;
+      
     } 
     function redirectToNewPage(event) {
       event.preventDefault(); // Prevent the form from submitting
