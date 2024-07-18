@@ -399,7 +399,7 @@
     }
     else {
         document.getElementById('result').hidden = false;
-        document.getElementById('result').innerText = 'Uploaded and Verified Successfully. You can now enjoy the benefits of Dementia E-banking !!';
+        document.getElementById('result').innerText = 'Uploaded Successfully. Account activation with benefits is subject to successful document verification!!';
         document.getElementById('upload').disabled=true;
     } 
   });
@@ -407,7 +407,7 @@
   document.getElementById('srvcClose').addEventListener('click', function() {
     // Display the message
     //check if file is selected
-    if(document.getElementById('result').innerText === 'Uploaded and Verified Successfully. You can now enjoy the benefits of Dementia E-banking !!') {
+    if(document.getElementById('result').innerText === 'Uploaded Successfully. Account activation with benefits is subject to successful document verification!!') {
         event.preventDefault(); 
         var name = document.getElementById('loggedinuser').value;
         var username = getUrlParameter('username');
