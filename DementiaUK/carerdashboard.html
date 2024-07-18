@@ -25,10 +25,11 @@
       
         <!-- Main CSS File -->
         <link href="assets/css/main.css" rel="stylesheet">
-            
-<style>
-   
-        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-gL6o3aIvCt/rCpBKyZ/2F+1Y45a1VWhL+ExaFNK3VWk9RI3Ftj/8G46jD4F2Kg5b8APf6A2b9k8ZezUqfCC2pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body class="courses-page">
@@ -39,106 +40,351 @@
     <!-- Uncomment the line below if you also wish to use an image logo -->
     <!-- <img src="assets/img/F-logo.jpg" alt=""> -->
     <img src="assets/img/logo.jpeg" alt=""> 
-        <h1 class="sitename">FINBANK</h1>
+    <h1 class="sitename">FINBANK</h1>
   </a>
     
   <nav id="navmenu" class="navmenu">
-    <ul>
-      <li><a href="index.html" class="active">Home<br></a></li>
-      <li class="demhead"><a href="dementia.html"><b> Living with dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
-              <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Savings</a></li>
-                  <li><a href="#">Credit Card</a></li>
-                  <li><a href="#">Loans</a></li>
-                  <li><a href="#">Insurance</a></li>
-                  <li><a href="#">Investments</a></li>
-                  <li><a href="dementia.html"><b>Dementia<sup style="color: #ff5828;">New!</sup></b></a></li>
-                </ul>
-      </li>
+    <!-- changes by chetan <ul>
       <li><a href="contact.html">Contact Us</a></li>
       <li><b>Logged in as : <span id="loggedinuser"></span></b></li>
-    </ul>
+    </ul> -->
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
   </nav>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: seagreen;
+    }
+    .header {
+        background-color: #333;
+        padding: 15px 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    .header a:hover {
+        text-decoration: underline;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #575757;
+    }
+    #accountPieChart {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the chart horizontally */
+    }
+    #invPieChart {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the chart horizontally */
+    }
+    .scrollable-div {
+      height: 300px; /* Set height as needed */
+      overflow: auto; /* Enable scrolling */
+      border: 1px solid #ccc; /* Optional border for visual clarity */
+      padding: 10px; /* Optional padding inside the div */
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="nav-links">
+    <a href="#dashboard">Dementia Services</a>
+    <a href="#services">GenServices</a>
+    <a href="#support">Support</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+<div class="dropdown">
+    <button class="dropbtn">Account &#9662;</button>
+    <div class="dropdown-content">
+        <a data-toggle="modal" data-target="#profileModal" style="color: #333;">Profile</a>
+        <a href="#settings">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+</div>
+</div>
 
     
 </div>
 </header>  
 <!--<main class="main">-->
-  <div class="main-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Account Summary</h5>
-              <div class="row">
-                <div class="col-md-6">
-                  <p><strong>Account Number:</strong> 1234567890</p>
-                  <p><strong>Account Type:</strong> Savings</p>
-                  <p><strong>Balance:</strong> $10,000</p>
-                </div>
-                <div class="col-md-6">
-                  <p><strong>Available Balance:</strong> $8,500</p>
-                  <p><strong>Last Updated:</strong> January 1, 2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Recent Transactions</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Payment received - $500</li>
-                <li class="list-group-item">Withdrawal - $200</li>
-                <li class="list-group-item">Deposit - $1000</li>
-                <li class="list-group-item">Utility Bill Payment - $100</li>
-              </ul>
-              <a href="#" class="card-link">View All Transactions</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Payments Due</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Credit Card - $200</li>
-                <li class="list-group-item">Utility Bill - $100</li>
-              </ul>
-              <a href="#" class="card-link">Make a Payment</a>
-            </div>
-          </div>
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;" >
+        <div class="services">
+          <br>
+          <h5 style="text-align: center;"><strong>Services</strong></h5><br>
+          <ul>
+            <li>Cash Delivery</li><br>
+            <li>Cash Pick-up</li><br>
+            <li>Cheque Pick-up</li><br>
+            <li>Export tracking Data</li><br>
+            <li>Upload Proofs</li><br>
+            <li>Detailed Account Summary</li>
+          </ul>
         </div>
       </div>
-
-      <div class="row mt-4">
+      <br>
+      <div class="col-md-6" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <h5>Hi, <strong><u><span id="loggedinuser"></span></u></strong></h5><br>
+        <div class="row">
         <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Loan Details</h5>
-              <p><strong>Loan Type:</strong> Personal Loan</p>
-              <p><strong>Loan Amount:</strong> $5,000</p>
-              <p><strong>Interest Rate:</strong> 8% APR</p>
-              <a href="#" class="card-link">View Loan Statement</a>
-            </div>
-          </div>
+          <h4><strong>Account Summary</strong></h4>
+          <canvas id="accountPieChart"></canvas>
         </div>
         <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Profile Information</h5>
-              <p><strong>Name:</strong> John Doe</p>
-              <p><strong>Email:</strong> johndoe@example.com</p>
-              <p><strong>Phone:</strong> +1 234 567 8901</p>
-              <a href="#" class="card-link">Update Profile</a>
-            </div>
+          <h4><strong>Investment Summary</strong></h4>
+          <canvas id="invPieChart"></canvas>
+        </div>
+        </div>
+        <br><br>
+        
+      </div>
+      <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <br>
+        <h5 class="card-title text-center"><strong>Payments Due<sup style="color: red;"><strong>!!</strong></sup></strong></h5><br>
+        <div class="row" >
+          <div class="col-md-12 text-align" style="font-size: 13px;">
+            <span>XYZ Credit Card - €200 
+              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#exampleModal" style="font-size: 13px;">Pay</button>
+            </span>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-md-12 text-align" style="font-size: 13px;">
+            <span>Electricity Bill - €300 
+              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#example2Modal" style="font-size: 13px;">Pay</button>
+            </span>
           </div>
         </div>
       </div>
     </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3 scrollable-div" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <br>
+        <h5 class="card-title text-center"><strong>Recent Transactions</strong></h5><br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>xyz company</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€15</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>online goods</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€38</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment recieved from<br><strong>Marcus/34556/2466</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: green">+€400</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>food company</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€20</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment recieved from<br><strong>Salary/08e3459356324/12</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: green">+€1200</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>groceries</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€35</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+          <div class="col-md-8" style="font-size: 13px;">
+            <span>Payment made to<br><strong>Alexa</strong></span>
+          </div>
+          <div class="col-md-4">
+            <span style="color: red;">-€40</span>
+          </div>
+        </div>
+        <br>
+      </div>
+      <style>
+        .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        grid-gap: 10px; /* Gap between grid items */
+        border: 1px solid #ccc; /* Border for visualization */
+        padding: 10px; /* Padding for spacing */
+  }
+.inner-grid {
+  padding: 20px;
+}
+      </style>
+      <div class="col-md-3 grid" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <div class="col-md-6 text-center inner-grid">
+          <h6 style="text-align: center;"><strong>Quick Transfer</strong></h6>
+          <img src="assets/img/quick.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+        <div class="col-md-6 text-center  inner-grid">
+          <h6 style="text-align: center;"><strong>Manage Limits</strong></h6>
+          <img src="assets/img/manlimits.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+      </div>
+      <div class="col-md-3 grid" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <div class="col-md-6 text-center inner-grid">
+          <h6 style="text-align: center;"><strong>Bill Payments</strong></h6>
+          <img src="assets/img/billpay.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+        <div class="col-md-6 text-center inner-grid">
+          <h6 style="text-align: center; "><strong>Schedule Payments</strong></h6>
+          <img src="assets/img/SchdPymt.png" style="border: transparent; height: auto; width: 50%;" alt="">
+        </div>
+      </div>
+      <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <br>
+        <h4><strong>My Offers !</strong></h4><br>
+          <p  style="border: 1px solid ;">Eligible for higher interest rates on deposits.
+            <a href="#" class="more-btn"><span>Know More</span> <i class="bi bi-chevron-right"></i></a>
+          </p>
+          <p  style="border: 1px solid ;">Pre-approved Medical loan
+            <a href="#" class="more-btn"><span>Know More</span> <i class="bi bi-chevron-right"></i></a>
+          </p>
+      </div>
+    </div>
   </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Make Payment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="color: red;">Auto debit scheduled for 20<sup>th</sup>. Click Below to pay now.</p>
+          <p><strong>Debit from</strong> : 1234567</p>
+          <p><strong>Payment Amount</strong> : €200</p>
+        </div>
+        <p id="paid" hidden style="color: green;"><strong>Payment made successfully !</strong></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="paynow">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="example2ModalLabel">Make Payment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="color: red;">Auto debit scheduled for 21<sup>st</sup>. Click Below to pay now.</p>
+          <p><strong>Debit from</strong> : 1234567</p>
+          <p><strong>Payment Amount</strong> : €300</p>
+        </div>
+        <p id="paid2" hidden style="color: green;"><strong>Payment made successfully !</strong></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="paynow2">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profileModalLabel">View Profile</h5>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="card-title">Profile Information</h5>
+              <p><strong>Name:</strong> John Doe</p>
+              <p><strong>Email:</strong> johndoe@example.com</p>
+              <p><strong>Phone:</strong> +1 234 567 8901</p>
+              <a href="#" class="card-link">Update Profile</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Update Info</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!--</main>-->
 
   
@@ -155,10 +401,25 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script> 
+  document.getElementById('paynow').addEventListener('click', function() {
+    // Display the message
+    document.getElementById('paid').hidden = false;
+    document.getElementById('paynow').disabled=true;
+  });
+  document.getElementById('paynow2').addEventListener('click', function() {
+    // Display the message
+    document.getElementById('paid2').hidden = false;
+    document.getElementById('paynow2').disabled=true;
+  });
 function getUrlParameter(name) {
       name = name.replace(/[\[\]]/g, '\\$&');
       var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -173,6 +434,75 @@ function getUrlParameter(name) {
 
     // Example usage
     document.getElementById('loggedinuser').textContent = username;
+
+    var ctx = document.getElementById('accountPieChart').getContext('2d');
+    var accountPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Savings', 'Deposits'],
+        datasets: [{
+          label: '',
+          data: [35000,80000],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Pie Chart Example'
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    });
+    var ctx = document.getElementById('invPieChart').getContext('2d');
+    var invPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['SIPP','Stocks & Shares'],
+        datasets: [{
+          label: 'EURO',
+          data: [8.5,10],
+          backgroundColor: [
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)'
+          ],
+          borderColor: [
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Pie Chart Example'
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    });
     </script> 
 </body>
 

@@ -124,6 +124,11 @@
       border: 1px solid #ccc; /* Optional border for visual clarity */
       padding: 10px; /* Optional padding inside the div */
 }
+.service-group:hover {
+      background-color: #f8f9fa; /* Change to your desired hover background color */
+      color: #007bff; /* Change to your desired hover text color */
+      cursor: pointer; /* Optional: Change cursor style on hover */
+    }
 </style>
 </head>
 <body>
@@ -157,9 +162,9 @@
           <br>
           <h5 style="text-align: center;"><strong>Services</strong></h5><br>
           <ul>
-            <li>Cash Delivery</li><br>
-            <li>Cash Pick-up</li><br>
-            <li>Cheque Pick-up</li><br>
+            <li data-toggle="modal" data-target="#cashrqst" class="service-group">Cash Delivery</li><br>
+            <li data-toggle="modal" data-target="#cashpick" class="service-group">Cash Pick-up</li><br>
+            <li data-toggle="modal" data-target="#chqrqst" class="service-group">Cheque Pick-up</li><br>
             <li>Export tracking Data</li><br>
             <li>Upload Proofs</li><br>
             <li>Detailed Account Summary</li>
@@ -188,14 +193,14 @@
         <div class="row" >
           <div class="col-md-12 text-align" style="font-size: 13px;">
             <span>XYZ Credit Card - €200 
-              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#exampleModal" style="font-size: 13px;">Pay</button>
+              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#exampleModal" style="font-size: 13px; color: red;">Pay</button>
             </span>
           </div>
         </div>
         <div class="row" >
           <div class="col-md-12 text-align" style="font-size: 13px;">
             <span>Electricity Bill - €300 
-              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#example2Modal" style="font-size: 13px;">Pay</button>
+              <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#example2Modal" style="font-size: 13px; color: red;">Pay</button>
             </span>
           </div>
         </div>
@@ -318,6 +323,25 @@
   <br>
   <br>
 
+  <div class="modal fade" id="cashrqst" tabindex="-1" role="dialog" aria-labelledby="cashrqstLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cashrqstLabel">Cash Request</h5>
+        </div>
+        <div class="modal-body">
+          <p><strong>Account Number</strong> : 1234567</p>
+          <p><strong>Amount</strong> : <input type="text" class="Amount" id="cashAmt"></p>
+        </div>
+        <strong><p id="request" style="color: green;"></p></strong>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="requestnow">Request Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -419,6 +443,16 @@
     // Display the message
     document.getElementById('paid2').hidden = false;
     document.getElementById('paynow2').disabled=true;
+  });
+  document.getElementById('requestnow').addEventListener('click', function() {
+    // Display the message
+    if(document.getElementById('cashAmt').value === '') {
+      document.getElementById('request').innerHTML = 'Amount cannot be empty';
+    }
+    else {
+      document.getElementById('request').innerHTML = 'Request Submitted. A bank representative will reach out to you.';
+      document.getElementById('requestnow').disabled=true;
+    }
   });
 function getUrlParameter(name) {
       name = name.replace(/[\[\]]/g, '\\$&');

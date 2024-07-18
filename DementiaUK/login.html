@@ -142,15 +142,15 @@
   <div class="col-md-6 text-center" style="border-radius: 5px; border: 2px solid seagreen ">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="logins">
-      <button class="nav-link active" id="user-login-form-tab" data-bs-toggle="tab" data-bs-target="#user-login-form" type="button" role="tab" aria-controls="user-login-form" aria-selected="true">User Login</button>
+      <button class="nav-link active" id="user-login-form-tab" data-bs-toggle="tab" data-bs-target="#user-login-form" type="button" role="tab" aria-controls="user-login-form" aria-selected="true">Sign In</button>
     </li>
     <li class="nav-item" role="logins">
-      <button class="nav-link" id="carer-login-form-tab" data-bs-toggle="tab" data-bs-target="#carer-login-form" type="button" role="tab" aria-controls="carer-login-form" aria-selected="false">Carer Login</button>
+      <button class="nav-link" id="user-signup-form-tab" data-bs-toggle="tab" data-bs-target="#user-signup-form" type="button" role="tab" aria-controls="user-signup-form" aria-selected="false">New User ?</button>
     </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div id="user-login-form" class="tab-pane fade show active" role="tabpanel" aria-labelledby="user-login-form-tab"> 
-        <h2>Login</h2> 
+        <h3><strong>Login</strong></h3> 
         <form id="loginForm" onsubmit="return submitLogin()"> 
             <div class="form-group"> 
               <label for="username">User Name</label> 
@@ -162,36 +162,11 @@
             </div> 
             <p id="error" style="color: red;"></p>
             <button type="submit" class="btn btn-primary btn-block" >Login</button>
-            
-            <div class="switch-form"> 
-                <p>Don't have an account? 
-                    <a href="#" onclick="switchFormUser()">Sign Up</a>
-                </p> 
-            </div> 
+            <br><br>
         </form> 
       </div> 
-      <div id="carer-login-form" class="tab-pane fade" role="tabpanel" aria-labelledby="carer-login-form-tab"> 
-          <h2>Login</h2> 
-          <form id="loginForm" action="carerdashboard.html" method="GET"> 
-            <div class="form-group"> 
-              <label for="username">User Name</label> 
-              <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required> 
-            </div> 
-            <div class="form-group"> 
-              <label for="login-password">Password</label> 
-            <input type="password" id="password" name="password" placeholder="Enter password" required> 
-            </div> 
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-            <div class="switch-form"> 
-                <p>Don't have an account? 
-                    <a href="#" onclick="switchFormUser()">Sign Up</a>
-                </p> 
-            </div> 
-        </form>
-      </div>
-      <!-- User Sign-Up Form --> 
-      <!--<div id="user-signup-form" style="display: none;"> 
-        <h2>Sign Up</h2> 
+      <div id="user-signup-form" class="tab-pane fade" role="tabpanel" aria-labelledby="user-signup-form-tab"> 
+        <h3><strong>Register</strong></h3>  
         <form action="/signup" method="POST"> 
             <div class="form-group"> 
                 <label for="signup-email">Email</label> 
@@ -204,30 +179,8 @@
             <div class="form-group"> 
                 <button type="submit">Sign Up</button> 
             </div> 
-            <div class="switch-form"> 
-                <p>Already have an account? <a href="#" onclick="switchFormUser()">Login</a></p> 
-            </div> 
         </form> 
       </div> 
-      <div id="carer-signup-form" style="display: none;"> 
-        <h2>Sign Up</h2> 
-        <form action="/signup" method="POST"> 
-            <div class="form-group"> 
-                <label for="signup-email">Email</label> 
-                <input type="email" id="signup-email" name="email" required> 
-            </div> 
-            <div class="form-group"> 
-                <label for="signup-password">Password</label> 
-                <input type="password" id="signup-password" name="password" required> 
-            </div> 
-            <div class="form-group"> 
-                <button type="submit">Sign Up</button> 
-            </div> 
-            <div class="switch-form"> 
-                <p>Already have an account? <a href="#" onclick="switchFormCarer()">Login</a></p> 
-            </div> 
-        </form> 
-      </div>-->
     </div> 
   </div>
 </div>
