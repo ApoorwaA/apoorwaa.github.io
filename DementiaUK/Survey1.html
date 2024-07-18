@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
+
+  
    <script>
   function displayRadioValue(){
   var score = 0;
@@ -40,7 +41,7 @@
   }
   
   var demo = document.getElementById("result");
-  demo.innerHTML = '<br><br><p><center><font size = "5"> Your Dementia severity score is in between ' + totScore + '</font></center></p><p><center><font size = "5">Based on the survey score your chances for Dementia is ' + severityStatus + '.</font></center></p><p><center><a class="btn btn-success" href = "logindashboard.html">Click if you wish to Open Dementia Saving Account</a></center></p><br><p><center><font size = "2">Ongoing savings interest rates will be applicable on Dementia savings account. <br>Kindly upload relevant diagnosis documents and upon verification avail special interest rates.</center></p><footer class="footer p-5"><div class="container"><div class="row"><div class="col-md-3"><br><h7>Disclaimer: Author of the survey is </h7></div><div class="col-md-3"><br><br><p>Dr. Christopher M Clark, Alzheimer’s Disease Core Center <br> Department of Neurology, University of Pennsylvania, Philadelphia, Pennsylvania, USA</p></div></div></div></footer>'; 
+  demo.innerHTML = '<br><br><p><center><font size = "5"> Your Dementia severity score is in between ' + totScore + '</font></center></p><p><center><font size = "5">Based on the survey score your chances for Dementia is ' + severityStatus + '.</font></center></p><p><center><a class="btn btn-success" data-toggle="modal" data-target="#submitModal") >Click if you wish to Open Dementia Saving Account</a></center></p><br><p><center><font size = "2">Ongoing savings interest rates will be applicable on Dementia savings account. <br>Kindly upload relevant diagnosis documents and upon verification avail special interest rates.</center></p><footer class="footer p-5"><div class="container"><div class="row"><div class="col-md-3"><br><h7>Disclaimer: Author of the survey is </h7></div><div class="col-md-3"><br><br><p>Dr. Christopher M Clark, Alzheimer’s Disease Core Center <br> Department of Neurology, University of Pennsylvania, Philadelphia, Pennsylvania, USA</p></div></div></div></footer>'; 
  }
   
   </script>
@@ -58,7 +59,22 @@
  
 </head>
 <body>
-
+	<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="submitModalLabel"></h5>
+			</div>
+			<div class="modal-body">
+			  <p>Your Dementia savings A/c request has been sucessfully submitted. Account will be activated after 24 hours.</p>
+			</div>
+			<div class="modal-footer">
+			  <a href="logindashboard.html?username=Apoorwa">Ok</a>
+			  <!--<button type="button" class="btn btn-primary">Update Info</button>-->
+			</div>
+		  </div>
+		</div>
+	  </div>
 <div class="container">
 
   <div id="myCarousel" class="carousel slide" data-interval="false">
