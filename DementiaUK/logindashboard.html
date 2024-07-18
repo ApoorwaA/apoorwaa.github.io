@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Dementia UK Template</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+      
+        <!-- Favicons -->
+        <link href="assets/img/F-logo.jpg" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+      
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-gL6o3aIvCt/rCpBKyZ/2F+1Y45a1VWhL+ExaFNK3VWk9RI3Ftj/8G46jD4F2Kg5b8APf6A2b9k8ZezUqfCC2pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="courses-page">
+<header id="header" class="header d-flex align-items-center sticky-top">
+<div class="container-fluid container-xl position-relative d-flex align-items-center">
+    
+  <a href="index.html" class="logo d-flex align-items-center me-auto">
+    <!-- Uncomment the line below if you also wish to use an image logo -->
+    <!-- <img src="assets/img/F-logo.jpg" alt=""> -->
+    <h1 class="sitename">FIN Bank</h1>
+  </a>
+    
+  <nav id="navmenu" class="navmenu">
+    <!-- changes by chetan <ul>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><b>Logged in as : <span id="loggedinuser"></span></b></li>
+    </ul> -->
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+  </nav>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: seagreen;
+    }
+    .header {
+        background-color: #333;
+        padding: 15px 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    .header a:hover {
+        text-decoration: underline;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #575757;
+    }
+    #accountPieChart {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the chart horizontally */
+    }
+    #invPieChart {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the chart horizontally */
+    }
+    .scrollable-div {
+      height: 300px; /* Set height as needed */
+      overflow: auto; /* Enable scrolling */
+      border: 1px solid #ccc; /* Optional border for visual clarity */
+      padding: 10px; /* Optional padding inside the div */
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="logo">
+    <a href="#home" style="color: chocolate;" data-toggle="modal" data-target="#forgetbills">Keep forgetting bills?</a>
+</div>
+<div class="nav-links">
+    <a href="#services">GenServices</a>
+    <a href="#support">Support</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+<div class="dropdown">
+    <button class="dropbtn">Account &#9662;</button>
+    <div class="dropdown-content">
+        <a data-toggle="modal" data-target="#profileModal" style="color: #333;">Profile</a>
+        <a href="#settings">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+</div>
+</div>
+
+    
+</div>
+</header>  
+<!--<main class="main">-->
+  <br>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-3" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+        <div class="services">
+            <br>
+            <h5 style="text-align: center;"><strong>Services</strong></h5><br>
+            <ul>
+                <li class="dropdown"><span><strong>Account</strong></span> <i class="bi bi-chevron-down toggle-dropdown"></i><br><br>
+                <ul>
+                    <li>Detailed Account Summary</li><br>
+                    <li>Statements</li>
+                </ul>
+                <br><br>
+                <li class="dropdown"><span><strong>Manage payments</strong></span> <i class="bi bi-chevron-down toggle-dropdown"></i><br><br>
+                <ul>
+                    <li>Quick Transfer</li><br>
+                    <li>Bill & Payments</li><br>
+                    <li>Manage Payees</li><br>
+                    <li>Standing Instructions</li><br>
+                </ul>
+            </ul>
+        </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-8" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+                <h5>Hi, <strong><u><span id="loggedinuser"></span></u></strong></h5><br>
+                <div class="row">
+                <div class="col-md-6">
+                <h4><strong>Account Summary</strong></h4>
+                <canvas id="accountPieChart"></canvas>
+                </div>
+                <div class="col-md-6">
+                <h4><strong>Investment Summary</strong></h4>
+                <canvas id="invPieChart"></canvas>
+                </div>
+                </div>
+                <br><br>
+                </div>
+                <div class="col-md-4" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+                <br>
+                <h5 class="card-title text-center"><strong>Payments Due<sup style="color: red;"><strong>!!</strong></sup></strong></h5><br>
+                <div class="row" >
+                <div class="col-md-12 text-align" style="font-size: 13px;">
+                    <span>XYZ Credit Card - €200 
+                    <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#exampleModal" style="font-size: 13px;">Pay</button>
+                    </span>
+                </div>
+                </div>
+                <div class="row" >
+                <div class="col-md-12 text-align" style="font-size: 13px;">
+                    <span>Electricity Bill - €300 
+                    <button type="button" class="btn bootstrap-icons" data-toggle="modal" data-target="#example2Modal" style="font-size: 13px;">Pay</button>
+                    </span>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+                    <div class="row">
+                        <div class="col-md-6 text-center inner-grid">
+                            <h6 style="text-align: center;"><strong>Bill Payments</strong></h6>
+                            <img src="assets/img/billpay.png" style="border: transparent; height: auto; width: 50%;" alt="">
+                        </div>
+                        <div class="col-md-6 text-center inner-grid">
+                            <h6 style="text-align: center; "><strong>Schedule Payments</strong></h6>
+                            <img src="assets/img/SchdPymt.png" style="border: transparent; height: auto; width: 50%;" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 text-center inner-grid">
+                            <h6 style="text-align: center;"><strong>Quick Transfer</strong></h6>
+                            <img src="assets/img/quick.png" style="border: transparent; height: auto; width: 50%;" alt="">
+                        </div>
+                        <div class="col-md-6 text-center  inner-grid">
+                            <h6 style="text-align: center;"><strong>Manage Limits</strong></h6>
+                            <img src="assets/img/manlimits.png" style="border: transparent; height: auto; width: 50%;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="border: 1px solid ; border-radius: 10px;  animation: borderFade 3s infinite alternate; background-color: ivory;">
+                    <br>
+                    <h4><strong>My Offers !</strong></h4><br>
+                    <p  style="border: 1px solid ;">Eligible for higher interest rates on deposits.
+                        <a href="#" class="more-btn"><span>Know More</span> <i class="bi bi-chevron-right"></i></a>
+                    </p>
+                    <p  style="border: 1px solid ;">Pre-approved Medical loan
+                        <a href="#" class="more-btn"><span>Know More</span> <i class="bi bi-chevron-right"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="modal fade" id="forgetbills" tabindex="-1" role="dialog" aria-labelledby="forgetbillsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgetbillsLabel">Forgetting bill payments ?</h5>
+        </div>
+        <div class="modal-body">
+            <p>
+            <br>Take our survey to check yourself against early signs of Dementia!<br>
+            <br>
+            <a class="btn-learnmore" href="login.html">Take survey here!</a>
+            </p>
+            <p>
+                Survey Already taken ?<br>Upload documents below to get the benefits under our Dementia products<br>
+                <input type="file" class="custom-file-input" id="customFile">
+                <button type="button" class="btn btn-primary" id="upload">Upload</button>
+            </p>
+        </div>
+        <strong><p id="result" hidden style="color: green;">
+        </p></strong>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="srvcClose">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Make Payment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="color: red;">Auto debit scheduled for 20<sup>th</sup>. Click Below to pay now.</p>
+          <p><strong>Debit from</strong> : 1234567</p>
+          <p><strong>Payment Amount</strong> : €200</p>
+        </div>
+        <p id="paid" hidden style="color: green;"><strong>Payment made successfully !</strong></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="paynow">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="example2ModalLabel">Make Payment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="color: red;">Auto debit scheduled for 21<sup>st</sup>. Click Below to pay now.</p>
+          <p><strong>Debit from</strong> : 1234567</p>
+          <p><strong>Payment Amount</strong> : €300</p>
+        </div>
+        <p id="paid2" hidden style="color: green;"><strong>Payment made successfully !</strong></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="paynow2">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profileModalLabel">View Profile</h5>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="card-title">Profile Information</h5>
+              <p><strong>Name:</strong> John Doe</p>
+              <p><strong>Email:</strong> johndoe@example.com</p>
+              <p><strong>Phone:</strong> +1 234 567 8901</p>
+              <a href="#" class="card-link">Update Profile</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Update Info</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--</main>-->
+
+  
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script> 
+  document.getElementById('paynow').addEventListener('click', function() {
+    // Display the message
+    document.getElementById('paid').hidden = false;
+    document.getElementById('paynow').disabled=true;
+  });
+  document.getElementById('paynow2').addEventListener('click', function() {
+    // Display the message
+    document.getElementById('paid2').hidden = false;
+    document.getElementById('paynow2').disabled=true;
+  });
+  document.getElementById('upload').addEventListener('click', function() {
+    // Display the message
+    //check if file is selected
+    if(document.getElementById('customFile').value === '') {
+        document.getElementById('result').hidden = false;
+        document.getElementById('result').innerText = 'No File Selected!';
+        
+    }
+    else {
+        document.getElementById('result').hidden = false;
+        document.getElementById('result').innerText = 'Uploaded and Verified Successfully. You can now enjoy the benefits of Dementia E-banking !!';
+        document.getElementById('upload').disabled=true;
+    } 
+  });
+  //srvcClose
+  document.getElementById('srvcClose').addEventListener('click', function() {
+    // Display the message
+    //check if file is selected
+    if(document.getElementById('result').innerText === 'Uploaded and Verified Successfully. You can now enjoy the benefits of Dementia E-banking !!') {
+        event.preventDefault(); 
+        var name = document.getElementById('loggedinuser').value;
+        var username = getUrlParameter('username');
+        //alert(username);
+        window.location.href = 'userdashboard.html?username=' + encodeURIComponent(username);
+    } 
+  });
+function getUrlParameter(name) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(window.location.href);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Get the username and password from the URL
+    var username = getUrlParameter('username');
+
+    // Example usage
+    document.getElementById('loggedinuser').textContent = username;
+
+    var ctx = document.getElementById('accountPieChart').getContext('2d');
+    var accountPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Savings', 'Deposits'],
+        datasets: [{
+          label: '',
+          data: [35000,80000],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Pie Chart Example'
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    });
+    var ctx = document.getElementById('invPieChart').getContext('2d');
+    var invPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['SIPP','Stocks & Shares'],
+        datasets: [{
+          label: 'EURO',
+          data: [8.5,10],
+          backgroundColor: [
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)'
+          ],
+          borderColor: [
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Pie Chart Example'
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    });
+    </script> 
+</body>
+
+</html>
